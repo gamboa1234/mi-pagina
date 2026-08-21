@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+/* ===========================
+   ESTILOS GENERALES
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: #f5f5f5;
+    color: #222;
+    transition: .3s;
+}
+
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.contenedor {
+    width: 100%;
+    padding-bottom: 40px;
+}
+
+
+/* BOTÓN MODO */
+
+.boton-modo {
+    margin-top: 14px;
+    padding: 10px 20px;
+    background-color: orange;
+    color: #222;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.boton-modo:hover {
+    background: #ff8800;
+}
+
+
+/* ===========================
+   HEADER
+=========================== */
+
+.header {
+    width: 90%;
+    margin: auto;
+    padding: 20px 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 35px;
+    font-weight: 900;
+    color: #222;
+}
+
+
+/* ===========================
+   MENÚ
+=========================== */
+
+.menu {
+    display: flex;
+}
+
+.navegacion {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.navegacion a {
+    text-decoration: none;
+    color: #555;
+    font-size: 18px;
+    transition: .3s;
+}
+
+.navegacion a:hover {
+    color: orange;
+}
+
+
+/* ===========================
+   PRESENTACIÓN
+=========================== */
+
+.presentacion {
+    width: 90%;
+    margin: 50px auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.informacion {
+    flex: 1;
+}
+
+.informacion h1 {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.informacion p {
+    margin-bottom: 15px;
+    color: #666;
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+.presentacion--imagen {
+    flex: 1;
+    text-align: center;
+}
+
+.presentacion--imagen img {
+    max-width: 500px;
+    margin: auto;
+    filter: drop-shadow(0 8px 18px rgba(255,166,0,.5));
+}
+
+
+/* ===========================
+   PLATOS
+=========================== */
+
+.comida {
+    width: 90%;
+    margin: auto;
+}
+
+.comida--titulo {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 90px;
+}
+
+.platos {
+
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:30px;
+}
+
+
+/* ===========================
+   TARJETAS
+=========================== */
+
+.plato {
+
+    background:white;
+    border-radius:15px;
+    padding:20px;
+
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+
+    text-align:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+    transition:.3s;
+}
+
+.plato:hover {
+    transform:translateY(-8px);
+}
+
+
+.plato img {
+
+    width:150px;
+    margin:-80px auto 10px;
+
+    filter:drop-shadow(0 0 12px orange);
+}
+
+
+.plato h3 {
+    color:#222;
+}
+
+
+.plato p {
+    color:#666;
+    line-height:1.5;
+}
+
+
+.plato--info {
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-top:10px;
+}
+
+
+.plato--info p {
+
+    font-size:22px;
+    font-weight:bold;
+    color:orange;
+}
+
+
+.plato--info button {
+
+    width:40px;
+    height:40px;
+
+    border:none;
+    border-radius:50%;
+
+    background:orange;
+    color:white;
+
+    font-size:25px;
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+
+.plato--info button:hover {
+    background:#ff8800;
+}
+
+
+/* ===========================
+   MODO CLARO 
+=========================== */
+
+body.claro {
+
+    background:#bab4a7;
+    color:#222;
+}
+
+
+body.claro .header {
+
+    background:#878d87;
+    border-radius:15px;
+}
+
+
+body.claro .logo {
+
+    color:#0e1611;
+}
+
+
+body.claro .navegacion a {
+
+    color:#0e1611;
+}
+
+
+body.claro .plato {
+
+    background:#e7efe8;
+}
+
+
+body.claro .plato h3 {
+
+    color:#0e1611;
+}
+
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:991px){
+
+    .platos{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+
+    .presentacion{
+        flex-direction:column;
+        text-align:center;
+    }
+
+
+    .informacion h1{
+        font-size:35px;
+    }
+
+}
+
+
+
+@media(max-width:768px){
+
+    .header{
+        flex-direction:column;
+        gap:20px;
+    }
+
+
+    .navegacion{
+        gap:20px;
+    }
+
+
+    .platos{
+
+        grid-template-columns:1fr;
+        gap:90px;
+
+    }
+
+
+    .informacion h1{
+        font-size:30px;
+    }
+
+
+    .comida--titulo{
+        font-size:30px;
+    }
+
+
+    .presentacion--imagen img{
+        max-width:320px;
+    }
+
+}/* CONTACTO */
+
+#contacto{
+    width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#contacto h2{
+    text-align: center;
+}
+
+/* Formulario de contacto */
+
+#contacto {
+    width: 100%;
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#contacto h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#formulario-contacto {
+    display: flex;
+    flex-direction: column;
+}
+
+#formulario-contacto label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#formulario-contacto input,
+#formulario-contacto textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#formulario-contacto button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Mensaje que aparece debajo del botón */
+
+#mensaje {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Mensaje de error */
+
+.error {
+    color: red;
+}
+
+/* Mensaje de éxito */
+
+.exito {
+    color: green;
+}
